@@ -56,11 +56,12 @@ button.addEventListener('click', function(){
 		},
 		mode: "no-cors",
 		body: JSON.stringify({
-			PageURL1: 'https://www.linvilla.com/wp-content/uploads/2019/01/The-Northern-Cardinal-Bird.jpg'
+			PageURL: 'https://www.lyricbirdfood.com/birding-hub/behavior/10-fascinating-facts-the-northern-cardinal/'
 		})
 		}).then(response => response.json())
 		.then(data => {
-			birdOne.innerHTML = '<img src=' + PageURL1 + 'alt="" />';
+			var birdInfo1 = data["image0"]
+			birdOne.innerHTML = '<img src=' + birdInfo1 + 'alt="" />';
 		});
 	
 	fetch('http://flip3.engr.oregonstate.edu:64234/scraper', {
@@ -75,7 +76,8 @@ button.addEventListener('click', function(){
 		})
 		}).then(response => response.json())
 		.then(data => {
-			birdTwo.innerHTML = '<img src=' + PageURL2 + 'alt="" />';
+			var birdInfo2 = data["image0"]
+			birdTwo.innerHTML = '<img src=' + birdInfo2 + 'alt="" />';
 		});
 
 	fetch('http://flip3.engr.oregonstate.edu:64234/scraper', {
@@ -90,7 +92,8 @@ button.addEventListener('click', function(){
 		})
 		}).then(response => response.json())
 		.then(data => {
-			birdTwo.innerHTML = '<img src=' + PageURL3 + 'alt="" />';
+			var birdInfo3 = data["image0"]
+			birdTwo.innerHTML = '<img src=' + birdInfo3 + 'alt="" />';
 		});
 	
 
